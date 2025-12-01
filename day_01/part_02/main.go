@@ -37,21 +37,16 @@ func main() {
 		direction := ln[0]
 		magnitude, _ := strconv.Atoi(ln[1:])
 
-		if direction == 'L' {
-			for range magnitude {
+		for range magnitude {
+			if direction == 'L' {
 				dial.Decr()
-				if dial == 0 {
-					count++
-				}
-			}
-		} else {
-			for range magnitude {
+			} else {
 				dial.Incr()
-				if dial == 0 {
-					count++
-				}
+			}
+			if dial == 0 {
+				count++
 			}
 		}
 	}
-	fmt.Print(count)
+	fmt.Println(count)
 }
