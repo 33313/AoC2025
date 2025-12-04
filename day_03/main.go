@@ -52,9 +52,9 @@ func part_02(lines []string) {
 			remaining_distance := len(ln) - (i + 1)
 
 			for b_i, b_val := range batteries {
-				batteries_space := len(batteries) - (b_i + 1)
+				batteries_to_fill := len(batteries) - (b_i + 1)
 				if val > b_val {
-					if batteries_space <= remaining_distance {
+					if batteries_to_fill <= remaining_distance {
 						batteries[b_i] = val
 						for k := b_i + 1; k < len(batteries); k++ {
 							batteries[k] = 0
